@@ -1,6 +1,5 @@
 package cosmic.repositories;
 
-
 import cosmic.models.Tag;
 import org.springframework.data.jpa.repository.JpaRepository;
 

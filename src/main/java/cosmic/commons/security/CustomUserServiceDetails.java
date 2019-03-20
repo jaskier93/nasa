@@ -1,11 +1,13 @@
 package cosmic.commons.security;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
 
-public class CustomUserServiceDetails extends  UserApp implements UserDetails {
+public class CustomUserServiceDetails extends UserApp implements UserDetails {
 
     public CustomUserServiceDetails(UserApp userApp) {
         super(userApp);
@@ -13,7 +15,10 @@ public class CustomUserServiceDetails extends  UserApp implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return getRoles()
+                .stream()
+                .map(role -> new SimpleGrantedAuthority("ROLE_"+role.getRole()))
+                .collect(Collectors.toList());
     }
 
     @Override

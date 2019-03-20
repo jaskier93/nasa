@@ -37,7 +37,7 @@ public class TagMapper implements Mapper<Tag, TagDto> {
 
     ;
 
-    private enum planetsToStrings implements Function<Planet,String> {
+    private enum planetsToStrings implements Function<Planet, String> {
         INSTANCE;
 
         @Override

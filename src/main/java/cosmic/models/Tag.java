@@ -27,7 +27,7 @@ public class Tag {
 
     @JsonIgnore
     @ManyToMany(mappedBy = "tags")
-    private Set<Planet> planets=new HashSet<>();
+    private Set<Planet> planets = new HashSet<>();
 
     @Override
     public boolean equals(Object o) {

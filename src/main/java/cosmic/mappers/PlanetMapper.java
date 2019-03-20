@@ -58,7 +58,7 @@ public class PlanetMapper implements Mapper<Planet, PlanetDto> {
 
         @Override
         public String apply(Tag tag) {
-           return tag.getTitle();
+            return tag.getTitle();
         }
     }
 
