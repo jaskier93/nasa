@@ -1,14 +1,13 @@
 package cosmic.controllers;
 
+import cosmic.models.dtos.PlanetDto;
 import cosmic.services.PlanetService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin
 @Controller
@@ -47,5 +46,9 @@ public class HomeController {
         planetService.deletePlanet(planetName);
         return "redirect:/planets";
     }
-
+@PostMapping("/add")
+    public String addPlanet(@ModelAttribute PlanetDto planetDto){
+        planetService.addPlanet(planetDto);
+        return "redirect:/planets/";
+}
 }
