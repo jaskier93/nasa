@@ -31,4 +31,5 @@ HELP.md
 mvnw
 /.mvn
 /src/main//resources/config.properties
+/src/main//resources/aplication.properties
 mvnw.cmd
